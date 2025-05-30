@@ -1,0 +1,6 @@
+name,email,phone,category_id/id,student_id,career,university
+"Juan Carlos Pérez","juan.perez@estudiantes.utn.edu.ar","+54 221 456-7890",base.res_partner_category_0,12345,"Ingeniería en Sistemas","UTN FrLP"
+"María Fernanda González","maria.gonzalez@estudiantes.utn.edu.ar","+54 221 456-7891",base.res_partner_category_0,12346,"Ingeniería Industrial","UTN FrLP"
+"Carlos Alberto Martínez","carlos.martinez@estudiantes.utn.edu.ar","+54 221 456-7892",base.res_partner_category_0,12347,"Ingeniería Electrónica","UTN FrLP"
+"Ana Sofía Rodriguez","ana.rodriguez@profesores.utn.edu.ar","+54 221 456-7893",base.res_partner_category_1,P001,"Docente Sistemas","UTN FrLP"
+"Roberto Daniel Silva","roberto.silva@estudiantes.utn.edu.ar","+54 221 456-7894",base.res_partner_category_0,12348,"Ingeniería Mecánica","UTN FrLP"

@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: odoo_postgres_utn
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo123
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  odoo:
+    image: odoo:18
+    container_name: odoo_app_utn
+    depends_on:
+      - db
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo123
+      - POSTGRES_DB=postgres
+      - ODOO_RC=/etc/odoo/odoo.conf
+    volumes:
+      - ./config/odoo.conf:/etc/odoo/odoo.conf:ro
+      - odoo-web-data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons
+      - ./logs:/var/log/odoo
+    command: ["odoo", "--config=/etc/odoo/odoo.conf", "--dev=all"]
+    ports:
+      - "8069:8069"
+    restart: unless-stopped
+
+volumes:
+  odoo-web-data:
+  odoo-db-data:
